@@ -1,7 +1,8 @@
-package com.example.navigation_component_test
+package com.example.navigation_component_test.fragments
 
 import android.os.Bundle
 import androidx.preference.PreferenceFragmentCompat
+import com.example.navigation_component_test.R
 
 class SettingsFragment : PreferenceFragmentCompat() {
 

@@ -1,4 +1,4 @@
-package com.example.navigation_component_test
+package com.example.navigation_component_test.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -6,8 +6,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.navigation.Navigation
+import com.example.navigation_component_test.CameraFragmentDirections
+import com.example.navigation_component_test.R
 import com.example.navigation_component_test.databinding.FragmentCameraBinding
-import com.example.navigation_component_test.databinding.FragmentFragmentPhotosBinding
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -36,7 +38,9 @@ class CameraFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding=DataBindingUtil.inflate(inflater, R.layout.fragment_camera, container, false);
         binding.btnPhotos.setOnClickListener {
-            CameraFragmentDirections.CamerPhotosAction()
+            val action= CameraFragmentDirections.camerPhotosAction()
+            action.numOfPhotos = 14
+            Navigation.findNavController(it).navigate(action)
         }
         return binding.root
     }

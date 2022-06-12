@@ -9,6 +9,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.NavigationUI
 import com.example.navigation_component_test.databinding.ActivityMainBinding
 
@@ -43,11 +44,11 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        val navigated=NavigationUI.onNavDestinationSelected(item!!,navController)
+        val navigated=NavigationUI.onNavDestinationSelected(item,navController)
         return navigated
     }
 
-//    override fun onSupportNavigateUp(): Boolean {
-//        return NavigationUI.navigateUp(drawer)
-//    }
+    override fun onSupportNavigateUp(): Boolean {
+        return NavigationUI.navigateUp(navController, AppBarConfiguration.Builder(navController.getGraph()).build())
+    }
 }

@@ -7,13 +7,13 @@
 
     <fragment
         android:id="@+id/destination_home"
-        android:name="com.example.navigation_component_test.HomeFragment"
-        android:label="fragment_fragment_home"
-        tools:layout="@layout/fragment_fragment_home" />
+        android:name="com.example.navigation_component_test.fragments.HomeFragment"
+        android:label="Home"
+        tools:layout="@layout/fragment_home" />
     <fragment
         android:id="@+id/destination_camera"
         android:name="com.example.navigation_component_test.CameraFragment"
-        android:label="fragment_camera"
+        android:label="Camera"
         tools:layout="@layout/fragment_camera">
         <action
             android:id="@+id/camer_photos_action"
@@ -21,9 +21,9 @@
     </fragment>
     <fragment
         android:id="@+id/destination_photos"
-        android:name="com.example.navigation_component_test.PhotosFragment"
-        android:label="fragment_fragment_photos"
-        tools:layout="@layout/fragment_fragment_photos">
+        android:name="com.example.navigation_component_test.fragments.PhotosFragment"
+        android:label="Photos"
+        tools:layout="@layout/fragment_photos">
         <action
             android:id="@+id/photos_home_action"
             app:destination="@id/destination_home" />
@@ -34,6 +34,6 @@
     </fragment>
     <fragment
         android:id="@+id/settingsFragment"
-        android:name="com.example.navigation_component_test.SettingsFragment"
-        android:label="SettingsFragment" />
+        android:name="com.example.navigation_component_test.fragments.SettingsFragment"
+        android:label="Settings" />
 </navigation>
