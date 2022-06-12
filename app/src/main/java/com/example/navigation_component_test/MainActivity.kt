@@ -1,13 +1,11 @@
 package com.example.navigation_component_test
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.Toolbar
+import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.NavController
-import androidx.navigation.Navigation
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.NavigationUI
@@ -44,8 +42,10 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        val navigated=NavigationUI.onNavDestinationSelected(item,navController)
-        return navigated
+        return when (item.title) {
+            "Settings" -> NavigationUI.onNavDestinationSelected(item, navController)
+            else -> false
+        }
     }
 
     override fun onSupportNavigateUp(): Boolean {
